@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 15:48:14 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/03/04 10:28:43 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/03/04 22:26:46 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-int		ft_isdigit(int c);
 char	*parsing(char *str);
 void	ft_exit(char *s);
 char	*ft_strjoin(char *s1, char *s2);

@@ -6,7 +6,7 @@
 #    By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/05 02:41:00 by ezahiri           #+#    #+#              #
-#    Updated: 2024/03/01 11:25:55 by ezahiri          ###   ########.fr        #
+#    Updated: 2024/03/04 22:29:01 by ezahiri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,6 @@ SRCS =	MANDATORY/srcs/main.c \
 		MANDATORY/opertion/rev_rotate_a_b.c 
 
 UTILS = util/ft_atoi.c \
-		util/ft_isdigit.c \
 		util/ft_split.c \
 		util/ft_strlen.c \
 		util/ft_strdup.c \
@@ -55,8 +54,8 @@ UTILS = util/ft_atoi.c \
 		util/is_sorted.c \
 		util/ft_exit.c \
 		util/memfree.c \
-		
-		
+
+
 BONUS_SRCS = BONUS/main_bonus.c \
 			BONUS/checker_bonus.c \
 			BONUS/ft_strcmp.c \
@@ -75,16 +74,16 @@ BONUS_SRCS = BONUS/main_bonus.c \
 			BONUS/opertion/rev_rotate_a_bonus.c \
 			BONUS/opertion/rev_rotate_b_bonus.c \
 			BONUS/opertion/rev_rotate_a_b_bonus.c \
-		 
+			
 OBJ = $(SRCS:.c=.o)
-		
+
 UTILS_OBJ = $(UTILS:.c=.o)
 		
 BONUS_OBJ = $(BONUS_SRCS:.c=.o)
 
-all: $(NAME) clean
+all: $(NAME)
 
-bonus: $(NAME_BONUS) clean
+bonus: $(NAME_BONUS)
 
 
 $(NAME_BONUS) : $(BONUS_OBJ) $(UTILS_OBJ)
@@ -108,4 +107,3 @@ fclean: clean
 	@rm -f $(NAME) $(NAME_BONUS) 
 	
 re: fclean all
-
