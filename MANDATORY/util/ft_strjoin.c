@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rev_rotate_b.c                                     :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/06 03:40:34 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/03/04 23:48:03 by ezahiri          ###   ########.fr       */
+/*   Created: 2024/02/03 02:29:30 by ezahiri           #+#    #+#             */
+/*   Updated: 2024/03/04 23:46:40 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	rrb(t_list **lst)
+char	*ft_strjoin(char *s1, char *s2)
 {
-	t_list	*head;
-	t_list	*last;
-	t_list	*before;
+	char	*str;
+	int		i;
+	int		len;
 
-	if (!*lst || !(*lst)->next)
-		return ;
-	before = ft_lst_beforelast (*lst);
-	head = *lst;
-	last = ft_lstlast(*lst);
-	last->next = head;
-	*lst = last;
-	before->next = NULL;
-	write (1, "rrb\n", 4);
+	if (!s1)
+		return (ft_strdup(s2));
+	len = ft_strlen(s1) + ft_strlen(s2);
+	str = (char *)malloc (sizeof(char) * (len + 1));
+	if (!str)
+		return (NULL);
+	i = -1;
+	while (s1[++i])
+		str[i] = s1[i];
+	while (i < len)
+		str[i++] = *s2++;
+	str[len] = '\0';
+	free(s1);
+	return (str);
 }

@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_exit_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/26 16:19:50 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/27 17:49:50 by ezahiri          ###   ########.fr       */
+/*   Created: 2024/02/03 02:22:59 by ezahiri           #+#    #+#             */
+/*   Updated: 2024/03/05 00:05:01 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_util.h"
+#include "../checker_bonus.h"
 
-int	ft_strlen(char *str)
+void	ft_exit(char *s)
 {
-	int	len;
-
-	len = 0;
-	while (str[len])
-		len++;
-	return (len);
+	write(2, "Error\n", 6);
+	if (s)
+		free(s);
+	exit(1);
 }

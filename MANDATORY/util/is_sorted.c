@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_beforelast.c                                :+:      :+:    :+:   */
+/*   is_sorted.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/06 03:04:28 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/26 16:23:54 by ezahiri          ###   ########.fr       */
+/*   Created: 2024/02/15 10:16:55 by ezahiri           #+#    #+#             */
+/*   Updated: 2024/03/04 23:46:40 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_util.h"
+#include "../push_swap.h"
 
-t_list	*ft_lst_beforelast(t_list *lst)
+int	is_sorted(t_list *stack_a)
 {
 	t_list	*tmp;
 
-	if (!lst && ft_lstsize(lst) < 2)
-		return (NULL);
-	tmp = lst;
-	while (tmp->next->next)
+	tmp = stack_a;
+	while (tmp && tmp->next)
+	{
+		if (tmp->content > tmp->next->content)
+			return (1);
 		tmp = tmp->next;
-	return (tmp);
+	}
+	return (0);
 }

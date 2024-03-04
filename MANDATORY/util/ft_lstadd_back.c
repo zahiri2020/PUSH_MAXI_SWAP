@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memfree.c                                          :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/26 16:27:34 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/03/03 20:31:34 by ezahiri          ###   ########.fr       */
+/*   Created: 2023/11/10 01:43:27 by ezahiri           #+#    #+#             */
+/*   Updated: 2024/03/04 23:46:40 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_util.h"
+#include "../push_swap.h"
 
-void	*memfree(char **strs)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	int	i;
-
-	i = 0;
-	while (strs[i])
-		free(strs[i++]);
-	free(strs);
-	return (NULL);
+	if (!lst || !new)
+		return ;
+	if (*lst == NULL)
+		*lst = new;
+	else
+		ft_lstlast(*lst)-> next = new;
 }

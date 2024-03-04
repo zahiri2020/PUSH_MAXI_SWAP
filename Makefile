@@ -6,7 +6,7 @@
 #    By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/05 02:41:00 by ezahiri           #+#    #+#              #
-#    Updated: 2024/03/04 22:58:24 by ezahiri          ###   ########.fr        #
+#    Updated: 2024/03/04 23:44:07 by ezahiri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,25 +33,24 @@ SRCS =	MANDATORY/srcs/main.c \
 		MANDATORY/opertion/rotate_a_b.c \
 		MANDATORY/opertion/rev_rotate_a.c \
 		MANDATORY/opertion/rev_rotate_b.c \
-		MANDATORY/opertion/rev_rotate_a_b.c 
+		MANDATORY/opertion/rev_rotate_a_b.c \
+		MANDATORY/util/ft_atoi.c \
+		MANDATORY/util/ft_split.c \
+		MANDATORY/util/ft_strlen.c \
+		MANDATORY/util/ft_strdup.c \
+		MANDATORY/util/ft_strjoin.c\
+		MANDATORY/util/ft_lstnew.c \
+		MANDATORY/util/ft_lstadd_front.c \
+		MANDATORY/util/ft_lstsize.c \
+		MANDATORY/util/ft_lstlast.c \
+		MANDATORY/util/ft_lstadd_back.c \
+		MANDATORY/util/ft_lstclear.c \
+		MANDATORY/util/ft_lst_beforelast.c \
+		MANDATORY/util/ft_stack_new.c \
+		MANDATORY/util/parsing.c \
+		MANDATORY/util/is_sorted.c \
+		MANDATORY/util/ft_exit.c \
 
-UTILS = util/ft_atoi.c \
-		util/ft_split.c \
-		util/ft_strlen.c \
-		util/ft_strdup.c \
-		util/ft_strjoin.c\
-		util/ft_lstnew.c \
-		util/ft_lstadd_front.c \
-		util/ft_lstsize.c \
-		util/ft_lstlast.c \
-		util/ft_lstadd_back.c \
-		util/ft_lstclear.c \
-		util/ft_lst_beforelast.c \
-		util/ft_stack_new.c \
-		util/parsing.c \
-		util/is_sorted.c \
-		util/ft_exit.c \
-		util/memfree.c \
 
 
 BONUS_SRCS = BONUS/main_bonus.c \
@@ -72,11 +71,25 @@ BONUS_SRCS = BONUS/main_bonus.c \
 			BONUS/opertion/rev_rotate_a_bonus.c \
 			BONUS/opertion/rev_rotate_b_bonus.c \
 			BONUS/opertion/rev_rotate_a_b_bonus.c \
+			BONUS/util/ft_atoi_bonus.c \
+			BONUS/util/ft_split_bonus.c \
+			BONUS/util/ft_strlen_bonus.c \
+			BONUS/util/ft_strdup_bonus.c \
+			BONUS/util/ft_strjoin_bonus.c\
+			BONUS/util/ft_lstnew_bonus.c \
+			BONUS/util/ft_lstadd_front_bonus.c \
+			BONUS/util/ft_lstsize_bonus.c \
+			BONUS/util/ft_lstlast_bonus.c \
+			BONUS/util/ft_lstadd_back_bonus.c \
+			BONUS/util/ft_lstclear_bonus.c \
+			BONUS/util/ft_lst_beforelast_bonus.c \
+			BONUS/util/ft_stack_new_bonus.c \
+			BONUS/util/parsing_bonus.c \
+			BONUS/util/is_sorted_bonus.c \
+			BONUS/util/ft_exit_bonus.c \
 			
 OBJ = $(SRCS:.c=.o)
 
-UTILS_OBJ = $(UTILS:.c=.o)
-		
 BONUS_OBJ = $(BONUS_SRCS:.c=.o)
 
 all: $(NAME)
@@ -84,20 +97,18 @@ all: $(NAME)
 bonus: $(NAME_BONUS)
 
 
-$(NAME_BONUS) : $(BONUS_OBJ) $(UTILS_OBJ)
-	@$(CC) -o $(NAME_BONUS) $(BONUS_OBJ) $(UTILS_OBJ)
+$(NAME_BONUS) : $(BONUS_OBJ)
+	@$(CC) -o $(NAME_BONUS) $(BONUS_OBJ)
 
-$(NAME): $(OBJ) $(UTILS_OBJ)
-	@$(CC) -o $(NAME) $(OBJ) $(UTILS_OBJ)
+$(NAME): $(OBJ)
+	@$(CC) -o $(NAME) $(OBJ)
 
 MANDATORY/%.o: MANDATORY/%.c MANDATORY/push_swap.h 
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 BONUS/%.o: BONUS/%.c BONUS/checker_bonus.h
 	@$(CC) $(CFLAGS) -c $< -o $@
-	
-util/%.o: util/%.c util/ft_util.h
-	@$(CC) $(CFLAGS) -c $< -o $@
+
 
 clean:
 	@rm -f $(OBJ) $(BONUS_OBJ) $(UTILS_OBJ)

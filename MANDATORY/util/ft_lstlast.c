@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 13:07:17 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/26 16:24:02 by ezahiri          ###   ########.fr       */
+/*   Created: 2023/11/09 23:11:28 by ezahiri           #+#    #+#             */
+/*   Updated: 2024/03/04 23:46:40 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_util.h"
+#include "../push_swap.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+t_list	*ft_lstlast(t_list *lst)
 {
-	if (lst && new)
-	{
-		new -> next = *lst;
-		*lst = new;
-	}
+	t_list	*tmp;
+
+	tmp = lst;
+	if (!lst)
+		return (NULL);
+	while (tmp -> next)
+		tmp = tmp -> next;
+	return (tmp);
 }

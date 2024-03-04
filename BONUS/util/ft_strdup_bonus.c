@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strdup_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/03 02:29:30 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/26 16:22:47 by ezahiri          ###   ########.fr       */
+/*   Created: 2024/02/26 16:17:36 by ezahiri           #+#    #+#             */
+/*   Updated: 2024/03/05 00:05:32 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_util.h"
+#include "../checker_bonus.h"
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strdup(char *s1)
 {
-	char	*str;
-	int		i;
+	char	*s2;
 	int		len;
+	int		i;
 
-	if (!s1)
-		return (ft_strdup(s2));
-	len = ft_strlen(s1) + ft_strlen(s2);
-	str = (char *)malloc (sizeof(char) * (len + 1));
-	if (!str)
+	len = ft_strlen(s1);
+	s2 = (char *)malloc (sizeof(char) * (len + 1));
+	if (!s2)
 		return (NULL);
-	i = -1;
-	while (s1[++i])
-		str[i] = s1[i];
+	i = 0;
 	while (i < len)
-		str[i++] = *s2++;
-	str[len] = '\0';
-	free(s1);
-	return (str);
+	{
+		s2[i] = s1[i];
+		i++;
+	}
+	s2[i] = '\0';
+	return (s2);
 }

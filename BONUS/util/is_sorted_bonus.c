@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   is_sorted_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/30 23:51:47 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/26 16:23:42 by ezahiri          ###   ########.fr       */
+/*   Created: 2024/02/15 10:16:55 by ezahiri           #+#    #+#             */
+/*   Updated: 2024/03/05 00:05:43 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_util.h"
+#include "../checker_bonus.h"
 
-long	ft_atoi(const char *str)
+int	is_sorted(t_list *stack_a)
 {
-	long	r;
-	int		s;
+	t_list	*tmp;
 
-	r = 0;
-	s = 1;
-	while (*str == 32 || (*str >= 9 && *str <= 13))
-		str++;
-	if (*str == '-' || *str == '+')
+	tmp = stack_a;
+	while (tmp && tmp->next)
 	{
-		s = 1 - 2 * (*str == '-');
-		str++;
+		if (tmp->content > tmp->next->content)
+			return (1);
+		tmp = tmp->next;
 	}
-	while (*str && *str >= '0' && *str <= '9')
-	{
-		r = r * 10 + (*str - 48);
-		if ((r > 2147483647 && s == 1) || (r > 2147483648 && s == -1))
-			return (2147483648);
-		str++;
-	}
-	return (r * s);
+	return (0);
 }

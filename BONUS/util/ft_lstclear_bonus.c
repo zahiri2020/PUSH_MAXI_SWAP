@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_exit.c                                          :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/03 02:22:59 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/27 17:11:45 by ezahiri          ###   ########.fr       */
+/*   Created: 2023/11/10 04:23:26 by ezahiri           #+#    #+#             */
+/*   Updated: 2024/03/05 00:05:13 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_util.h"
+#include "../checker_bonus.h"
 
-void	ft_exit(char *s)
+int	ft_lstclear(t_list *lst)
 {
-	write(2, "Error\n", 6);
-	if (s)
-		free(s);
-	exit(1);
+	t_list	*tmp;
+
+	tmp = NULL;
+	if (!lst)
+		return (0);
+	while (lst)
+	{
+		tmp = lst->next ;
+		free (lst);
+		lst = tmp;
+	}
+	return (0);
 }

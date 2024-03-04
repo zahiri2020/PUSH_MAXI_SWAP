@@ -6,11 +6,11 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 01:46:35 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/03/04 22:23:14 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/03/04 23:46:40 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_util.h"
+#include "../push_swap.h"
 
 int	ft_isdigit(int c)
 {

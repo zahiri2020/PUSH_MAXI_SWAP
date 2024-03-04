@@ -6,11 +6,11 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 04:03:32 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/03/04 22:40:28 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/03/04 23:46:40 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_util.h"
+#include "../push_swap.h"
 
 size_t	ft_strlcpy(char *dst, char *src, size_t dstsize)
 {

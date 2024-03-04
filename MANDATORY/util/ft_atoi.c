@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rev_rotate_b.c                                     :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/06 03:40:34 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/03/04 23:48:03 by ezahiri          ###   ########.fr       */
+/*   Created: 2023/10/30 23:51:47 by ezahiri           #+#    #+#             */
+/*   Updated: 2024/03/04 23:46:40 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	rrb(t_list **lst)
+long	ft_atoi(const char *str)
 {
-	t_list	*head;
-	t_list	*last;
-	t_list	*before;
+	long	r;
+	int		s;
 
-	if (!*lst || !(*lst)->next)
-		return ;
-	before = ft_lst_beforelast (*lst);
-	head = *lst;
-	last = ft_lstlast(*lst);
-	last->next = head;
-	*lst = last;
-	before->next = NULL;
-	write (1, "rrb\n", 4);
+	r = 0;
+	s = 1;
+	while (*str == 32 || (*str >= 9 && *str <= 13))
+		str++;
+	if (*str == '-' || *str == '+')
+	{
+		s = 1 - 2 * (*str == '-');
+		str++;
+	}
+	while (*str && *str >= '0' && *str <= '9')
+	{
+		r = r * 10 + (*str - 48);
+		if ((r > 2147483647 && s == 1) || (r > 2147483648 && s == -1))
+			return (2147483648);
+		str++;
+	}
+	return (r * s);
 }

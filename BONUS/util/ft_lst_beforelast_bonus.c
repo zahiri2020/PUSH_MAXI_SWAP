@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lst_beforelast_bonus.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/10 04:23:26 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/03/04 10:28:16 by ezahiri          ###   ########.fr       */
+/*   Created: 2024/02/06 03:04:28 by ezahiri           #+#    #+#             */
+/*   Updated: 2024/03/05 00:05:05 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_util.h"
+#include "../checker_bonus.h"
 
-int	ft_lstclear(t_list *lst)
+t_list	*ft_lst_beforelast(t_list *lst)
 {
 	t_list	*tmp;
 
-	tmp = NULL;
-	if (!lst)
-		return (0);
-	while (lst)
-	{
-		tmp = lst->next ;
-		free (lst);
-		lst = tmp;
-	}
-	return (0);
+	if (!lst && ft_lstsize(lst) < 2)
+		return (NULL);
+	tmp = lst;
+	while (tmp->next->next)
+		tmp = tmp->next;
+	return (tmp);
 }

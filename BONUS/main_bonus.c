@@ -6,11 +6,22 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 01:40:08 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/03/04 22:53:13 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/03/04 23:25:16 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
+
+void	*memfree(char **strs)
+{
+	int	i;
+
+	i = 0;
+	while (strs[i])
+		free(strs[i++]);
+	free(strs);
+	return (NULL);
+}
 
 int	is_duplicate(char **strs)
 {
