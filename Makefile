@@ -6,7 +6,7 @@
 #    By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/05 02:41:00 by ezahiri           #+#    #+#              #
-#    Updated: 2024/03/04 22:29:01 by ezahiri          ###   ########.fr        #
+#    Updated: 2024/03/04 22:46:36 by ezahiri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,6 @@ UTILS = util/ft_atoi.c \
 		util/ft_split.c \
 		util/ft_strlen.c \
 		util/ft_strdup.c \
-		util/ft_strlcpy.c \
 		util/ft_strjoin.c\
 		util/ft_lstnew.c \
 		util/ft_lstadd_front.c \

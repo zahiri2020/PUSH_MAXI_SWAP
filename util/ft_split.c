@@ -6,13 +6,31 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 04:03:32 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/27 17:51:24 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/03/04 22:40:28 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_util.h"
 
-static int	count_words(const char *s, char c)
+size_t	ft_strlcpy(char *dst, char *src, size_t dstsize)
+{
+	size_t	src_len;
+	size_t	i;
+
+	src_len = ft_strlen(src);
+	i = 0;
+	if (dstsize == 0)
+		return (src_len);
+	while (src[i] && i < dstsize - 1)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (src_len);
+}
+
+int	count_words(const char *s, char c)
 {
 	int	cpt;
 
@@ -26,7 +44,7 @@ static int	count_words(const char *s, char c)
 	return (cpt);
 }
 
-static	void	*strs_free(char **strs, int k)
+void	*strs_free(char **strs, int k)
 {
 	while (k--)
 		free(strs[k]);

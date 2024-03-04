@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 15:48:14 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/03/04 22:26:46 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/03/04 22:47:43 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,8 @@ typedef struct s_list
 char	*parsing(char *str);
 void	ft_exit(char *s);
 char	*ft_strjoin(char *s1, char *s2);
-char	*ft_strdup(char *s1);
 char	**ft_split(char *s, char c);
 long	ft_atoi(const char *str);
-size_t	ft_strlcpy(char *dst, char *src, size_t dstsize);
 int		ft_strlen(char *s);
 char	*ft_strdup(char *s1);
 void	ft_lstadd_back(t_list **lst, t_list *new);
