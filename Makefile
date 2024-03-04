@@ -6,7 +6,7 @@
 #    By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/05 02:41:00 by ezahiri           #+#    #+#              #
-#    Updated: 2024/03/04 22:46:36 by ezahiri          ###   ########.fr        #
+#    Updated: 2024/03/04 22:58:24 by ezahiri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,6 @@ UTILS = util/ft_atoi.c \
 		util/ft_lstclear.c \
 		util/ft_lst_beforelast.c \
 		util/ft_stack_new.c \
-		util/is_duplicate.c \
 		util/parsing.c \
 		util/is_sorted.c \
 		util/ft_exit.c \
@@ -57,11 +56,11 @@ UTILS = util/ft_atoi.c \
 
 BONUS_SRCS = BONUS/main_bonus.c \
 			BONUS/checker_bonus.c \
-			BONUS/ft_strcmp.c \
-			BONUS/add_back_ins.c\
-			BONUS/clear_ins.c\
-			BONUS/get_next_line/get_next_line.c \
-			BONUS/get_next_line/get_next_line_utils.c \
+			BONUS/ft_strcmp_bonus.c \
+			BONUS/add_back_in_bonus.c\
+			BONUS/clear_ins_bonus.c\
+			BONUS/get_next_line/get_next_line_bonus.c \
+			BONUS/get_next_line/get_next_line_utils_bonus.c \
 			BONUS/opertion/push_a_bonus.c \
 	   		BONUS/opertion/push_b_bonus.c \
 	   		BONUS/opertion/ft_swap_a_bonus.c \

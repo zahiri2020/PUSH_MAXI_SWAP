@@ -6,11 +6,36 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 01:40:08 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/03/04 10:29:18 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/03/04 22:52:22 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+int	is_duplicate(char **strs)
+{
+	int		i;
+	int		j;
+	long	a;
+
+	a = 0;
+	i = 0;
+	while (strs[i])
+	{
+		a = ft_atoi(strs[i]);
+		j = i + 1;
+		if (a > 2147483647 || a < -2147483648)
+			return (1);
+		while (strs[j])
+		{
+			if (a == ft_atoi(strs[j]))
+				return (1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
 
 void	ft_push(t_list **lst, int content)
 {
