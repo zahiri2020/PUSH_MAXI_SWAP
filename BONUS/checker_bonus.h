@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 10:23:39 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/27 18:12:55 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/03/04 10:32:53 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,6 @@ int		ft_strcmp(char *s1, char *s2);
 char	*get_next_line(int fd);
 char	*ft_strchr(const char *s, int c);
 void	ins_back(t_ins **lst, t_ins *new);
-void	clear_ins(t_ins **lst);
+void	clear_ins(t_ins *lst);
 
 #endif

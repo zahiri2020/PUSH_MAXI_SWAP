@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 15:48:14 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/03/03 20:31:42 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/03/04 10:28:43 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ t_list	*ft_lst_beforelast(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstnew(int content, int i);
 int		ft_lstsize(t_list *lst);
-int		ft_lstclear(t_list **lst);
+int		ft_lstclear(t_list *lst);
 int		is_duplicate(char **strs);
 void	ft_push(t_list **lst, int content);
 t_list	*ft_stack_new(int content, t_list **stack);

@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 10:11:28 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/03/04 10:12:11 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/03/04 10:33:14 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	ft_help(t_ins *all, t_list **a, t_list **b)
 		do_op(tmp->content, a, b);
 		tmp = tmp->next;
 	}
-	clear_ins(&all);
+	clear_ins(all);
 }
 
 void	ft_checker(t_list **a, t_list **b)
@@ -95,9 +95,9 @@ void	ft_checker(t_list **a, t_list **b)
 		if (!is_valid(s))
 		{
 			free(s);
-			clear_ins(&all);
+			clear_ins(all);
 			write (2, "Error\n", 6);
-			ft_lstclear(a);
+			ft_lstclear(*a);
 			exit(1);
 		}
 		lst = new_ins(s);

@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 01:40:08 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/03/03 23:22:32 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/03/04 10:30:12 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,8 @@ int	main(int ac, char **av)
 		write (1, "OK\n", 3);
 	else
 		write (1, "KO\n", 3);
-	ft_lstclear(&stack_a);
-	ft_lstclear(&stack_b);
+	ft_lstclear(stack_a);
+	ft_lstclear(stack_b);
 }
 
 // 	exit(0);
