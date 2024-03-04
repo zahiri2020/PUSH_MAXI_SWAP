@@ -6,22 +6,22 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 10:11:28 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/03/01 15:34:09 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/03/04 10:12:11 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
 
-t_ins	*new_ins(void *content)
+t_ins	*new_ins(char *content)
 {
-	t_ins	*new_node;
+	t_ins	*instuction;
 
-	new_node = (t_ins *)malloc(sizeof(t_ins));
-	if (!new_node)
+	instuction = (t_ins *)malloc(sizeof(t_ins));
+	if (!instuction)
 		return (NULL);
-	new_node -> content = content;
-	new_node -> next = NULL;
-	return (new_node);
+	instuction -> content = content;
+	instuction -> next = NULL;
+	return (instuction);
 }
 
 void	do_op(char *s, t_list **a, t_list **b)
@@ -72,7 +72,6 @@ void	ft_help(t_ins *all, t_list **a, t_list **b)
 {
 	t_ins	*tmp;
 
-	tmp = NULL;
 	tmp = all;
 	while (tmp)
 	{
@@ -97,7 +96,8 @@ void	ft_checker(t_list **a, t_list **b)
 		{
 			free(s);
 			clear_ins(&all);
-			write (1, "Error\n", 6);
+			write (2, "Error\n", 6);
+			ft_lstclear(a);
 			exit(1);
 		}
 		lst = new_ins(s);

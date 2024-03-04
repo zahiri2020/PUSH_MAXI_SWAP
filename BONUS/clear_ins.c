@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 17:21:49 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/27 18:13:09 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/03/04 10:14:38 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	clear_ins(t_ins **lst)
 {
 	t_ins	*tmp;
 
-	if (!lst)
+	if (!*lst)
 		return ;
 	while (*lst)
 	{
