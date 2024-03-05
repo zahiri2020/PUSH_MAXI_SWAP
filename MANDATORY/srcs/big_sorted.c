@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 23:40:40 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/03/05 21:29:13 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/03/05 22:42:21 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,27 +40,27 @@ void	sorting(t_list	**a, t_list **b)
 
 void	ft_a_to_b(t_list **a, t_list **b)
 {
-	int	ch2;
-	int	ch1;
+	int	pv2;
+	int	pv1;
 	int	md;
 
 	md = 0;
-	ch1 = 0;
-	ch2 = 0;
+	pv1 = 0;
+	pv2 = 0;
 	while (ft_lstsize(*a) > 3)
 	{
-		md = ch1;
-		ch2 = ft_lstsize(*a) / 6 + ch1;
-		ch1 = ft_lstsize(*a) / 3 + ch1;
-		while (ft_lstsize(*b) < ch1)
+		md = pv1;
+		pv2 = ft_lstsize(*a) / 6 + pv1;
+		pv1 = ft_lstsize(*a) / 3 + pv1;
+		while (ft_lstsize(*b) < pv1)
 		{
-			if (*a && (*a)->i < ch1)
+			if (*a && (*a)->i < pv1)
 				pb(a, b);
 			else
 				ra(a);
-			if (*b && (*a)->i >= ch1 && (*b)->i >= md && (*b)->i < ch2)
+			if (*b && (*a)->i >= pv1 && (*b)->i >= md && (*b)->i < pv2)
 				rr(a, b);
-			if (*b && (*b)->i >= md && (*b)->i < ch2)
+			if (*b && (*b)->i >= md && (*b)->i < pv2)
 				rb(b);
 		}
 	}
