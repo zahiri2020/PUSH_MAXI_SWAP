@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 10:23:39 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/03/04 23:44:51 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/03/05 21:32:05 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,9 @@ void	rrr(t_list **a, t_list **b);
 
 //
 void	ft_sorted_3(t_list **lst);
-void	ft_sorted_2(t_list **lst);
 void	ft_sorted_5(t_list **a, t_list **b);
 void	big_sort(t_list **a, t_list **b);
-void	sorting(t_list **a, t_list **b);
 int		is_sorted(t_list *stack_a);
+int		best_move(t_list *lst, int pos);
 
 #endif

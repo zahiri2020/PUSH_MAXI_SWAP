@@ -6,7 +6,7 @@
 #    By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/05 02:41:00 by ezahiri           #+#    #+#              #
-#    Updated: 2024/03/04 23:44:07 by ezahiri          ###   ########.fr        #
+#    Updated: 2024/03/05 21:32:53 by ezahiri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,10 +20,9 @@ NAME_BONUS = checker
 
 SRCS =	MANDATORY/srcs/main.c \
 		MANDATORY/srcs/big_sorted.c \
-		MANDATORY/srcs/sorted_2.c \
+		MANDATORY/srcs/best_move.c \
 		MANDATORY/srcs/sorted_3.c \
 		MANDATORY/srcs/sorted_5.c \
-		MANDATORY/srcs/sorted.c \
 		MANDATORY/opertion/push_a.c \
 	   	MANDATORY/opertion/push_b.c \
 	   	MANDATORY/opertion/ft_swap_a.c \
